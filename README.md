@@ -34,3 +34,9 @@
 # Labor 7
 
 * `gradlew dependencyUpdates`
+
+# Labor 8
+
+* Teszt lefedettség
+* `gradlew build` 
+* `\build\reports\jacoco\test\html\index.html` fájl tartalmát
