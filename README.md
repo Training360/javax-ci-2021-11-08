@@ -22,3 +22,4 @@
 * `git pull` - ez mindig kelleni fog a későbbiekben is
 * `cd ..\hello-java-gradle`
 * `gradlew build` - ellenőrizzétek, letrejön-e a jar fájl
+* `java -cp hello-java-gradle.jar hello.Hello`
