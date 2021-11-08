@@ -8,3 +8,11 @@
 
 * `git clone https://github.com/Training360/javax-ci-2021-11-08`
 * `gradlew hello`
+
+# Labor 3
+
+* `gradlew hello` parancs már az `init` taskot is futtatja
+
+# Labor 4
+
+* Default task futtatása `gradlew hello` paranccsal

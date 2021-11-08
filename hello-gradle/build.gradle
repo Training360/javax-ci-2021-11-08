@@ -1,3 +1,5 @@
+defaultTasks 'hello'
+
 tasks.register('hello') {
   dependsOn tasks.intro
   group 'Demo'
