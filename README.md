@@ -23,3 +23,10 @@
 * `cd ..\hello-java-gradle`
 * `gradlew build` - ellenőrizzétek, letrejön-e a jar fájl
 * `java -cp hello-java-gradle.jar hello.Hello`
+
+# Labor 6
+
+* Váltás a `javax-ci-2021-11-08` könyvtárra
+* `gradlew bootRun`
+* `http://localhost:8080/swagger-ui.html`
+* `http://localhost:8080/api/employees`
