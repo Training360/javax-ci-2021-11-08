@@ -30,3 +30,7 @@
 * `gradlew bootRun`
 * `http://localhost:8080/swagger-ui.html`
 * `http://localhost:8080/api/employees`
+
+# Labor 7
+
+* `gradlew dependencyUpdates`
