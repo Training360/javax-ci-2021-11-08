@@ -75,3 +75,15 @@ java -jar -Dspring.datasource.url=jdbc:mariadb://localhost/employees -Dspring.da
 ```shell
 gradlew -Pspring.datasource.url=jdbc:mariadb://localhost/employees -Pspring.datasource.username=employees  -Pspring.datasource.password=employees build
 ```
+
+# Labor 13
+
+```shell
+docker build -t employees .
+docker run -d -p 8080:8080 --name my-employees employees
+docker logs -f my-employees
+```
+
+```shell
+docker run -d -p 8080:8080 --name trainer-employees training360/employees1109
+```

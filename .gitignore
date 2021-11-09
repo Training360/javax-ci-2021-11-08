@@ -3,3 +3,6 @@ build
 .idea
 *.iml
 bin
+.settings
+.classpath
+.project
