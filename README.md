@@ -45,3 +45,4 @@
 
 * Docker futtatása
 * `net localgroup docker-users %USERDOMAIN%\%USERNAME% /add`
+* `docker run hello-world`
