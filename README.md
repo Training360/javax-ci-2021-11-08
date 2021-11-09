@@ -114,3 +114,13 @@ docker compose up
 cd e2e
 docker compose up --abort-on-container-exit
 ```
+
+# Labor 17
+
+* Váltás a `javax-ci-2021-11-08` könyvtárra
+
+```shell
+docker build -f Dockerfile.jenkins -t employees-jenkins .
+docker network create jenkins
+docker run -d --network jenkins --volume jenkins-data:/var/jenkins_home --volume /var/run/docker.sock:/var/run/docker.sock --publish 8090:8080 --name employees-jenkins employees-jenkins
+```
