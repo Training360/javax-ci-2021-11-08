@@ -105,3 +105,12 @@ docker run -d -p 8081:8080 --network employees-net --name employees-app -e SPRIN
 cd employees-app
 docker compose up
 ```
+
+# Labor 16
+
+* E2E tesztelés
+
+```shell
+cd e2e
+docker compose up --abort-on-container-exit
+```
