@@ -40,3 +40,8 @@
 * Teszt lefedettség
 * `gradlew build` 
 * `\build\reports\jacoco\test\html\index.html` fájl tartalmát
+
+# Labor 9
+
+* Docker futtatása
+* `net localgroup docker-users %USERDOMAIN%\%USERNAME% /add`
