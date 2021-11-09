@@ -69,3 +69,9 @@ java -jar -Dspring.datasource.url=jdbc:mariadb://localhost/employees -Dspring.da
 
 * `http://localhost:8080/swagger-ui.html`
 * `select * from employees;`
+
+# Labor 12
+
+```shell
+gradlew -Pspring.datasource.url=jdbc:mariadb://localhost/employees -Pspring.datasource.username=employees  -Pspring.datasource.password=employees build
+```
