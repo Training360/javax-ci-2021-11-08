@@ -123,4 +123,5 @@ docker compose up --abort-on-container-exit
 docker build -f Dockerfile.jenkins -t employees-jenkins .
 docker network create jenkins
 docker run -d --network jenkins --volume jenkins-data:/var/jenkins_home --volume /var/run/docker.sock:/var/run/docker.sock --publish 8090:8080 --name employees-jenkins employees-jenkins
+docker exec --user root -it employees-jenkins chmod 777 /var/run/docker.sock
 ```
