@@ -125,3 +125,9 @@ docker network create jenkins
 docker run -d --network jenkins --volume jenkins-data:/var/jenkins_home --volume /var/run/docker.sock:/var/run/docker.sock --publish 8090:8080 --name employees-jenkins employees-jenkins
 docker exec --user root -it employees-jenkins chmod 777 /var/run/docker.sock
 ```
+
+# Labor 18
+
+```shell
+docker run --name employees-sonarqube --detach --network jenkins --publish 9000:9000 sonarqube:lts
+```
