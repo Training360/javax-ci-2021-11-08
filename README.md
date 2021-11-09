@@ -86,4 +86,22 @@ docker logs -f my-employees
 
 ```shell
 docker run -d -p 8080:8080 --name trainer-employees training360/employees1109
+docker stop trainer-employees
+```
+
+# Labor 14
+
+```shell
+docker network create employees-net
+docker run -d -e MYSQL_DATABASE=employees -e MYSQL_USER=employees -e MYSQL_PASSWORD=employees -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -p 3307:3306 --network employees-net --name employees-app-mariadb mariadb
+docker run -d -p 8081:8080 --network employees-net --name employees-app -e SPRING_DATASOURCE_URL=jdbc:mariadb://employees-app-mariadb/employees -e SPRING_DATASOURCE_USERNAME=employees -e SPRING_DATASOURCE_PASSWORD=employees employees
+```
+
+# Labor 15
+
+* Docker compose - Python script
+
+```shell
+cd employees-app
+docker compose up
 ```
