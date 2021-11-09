@@ -58,3 +58,14 @@ docker exec -it employees-mariadb mysql
 connect employees
 select * from employees;
 ```
+
+# Labor 11
+
+* Alkalmazás futtatása, csatlakozzon a MariaDB-hez
+
+```shell
+java -jar -Dspring.datasource.url=jdbc:mariadb://localhost/employees -Dspring.datasource.username=employees -Dspring.datasource.password=employees employees-0.0.1-SNAPSHOT.jar 
+```
+
+* `http://localhost:8080/swagger-ui.html`
+* `select * from employees;`
