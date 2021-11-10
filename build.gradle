@@ -4,6 +4,7 @@ plugins {
 	id 'java'
         id 'com.github.ben-manes.versions' version '0.38.0'
         id 'jacoco'
+        id 'org.sonarqube' version '3.3'
 }
 
 group = 'training'
@@ -76,6 +77,11 @@ jacocoTestReport {
 
 
 jacocoTestReport {
+    reports {
+       xml.enabled true
+       csv.enabled true
+   }
+
     dependsOn test
 }
 
@@ -97,3 +103,13 @@ tasks.register('integrationTest', Test) {
 }
 
 check.dependsOn integrationTest
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "employees"
+        property "sonar.projectKey", "training:employees"
+        property "sonar.jacoco.xmlReportPath", "${project.buildDir}/reports/jacoco/test/jacocoTestReport.xml"
+        property "sonar.login", "admin"
+        property "sonar.password", "admin12"
+    }
+}
