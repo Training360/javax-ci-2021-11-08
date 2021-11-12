@@ -5,6 +5,7 @@ plugins {
         id 'com.github.ben-manes.versions' version '0.38.0'
         id 'jacoco'
         id 'org.sonarqube' version '3.3'
+        id 'maven-publish'
 }
 
 group = 'training'
@@ -13,6 +14,10 @@ sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
+//   maven {
+//    url "http://localhost:8091/repository/maven-public/"
+//    allowInsecureProtocol true
+//  }
 }
 
 sourceSets {
@@ -111,5 +116,26 @@ sonarqube {
         property "sonar.jacoco.xmlReportPath", "${project.buildDir}/reports/jacoco/test/jacocoTestReport.xml"
         property "sonar.login", "admin"
         property "sonar.password", "admin12"
+    }
+}
+
+publishing {
+    publications {
+        bootJava(MavenPublication) {
+            artifact bootJar
+        }
+    }
+    repositories {
+        maven {
+            def nexusUrl = findProperty('nexusUrl') ?: 'http://localhost:8091'
+            def releasesRepoUrl = nexusUrl + "/repository/maven-releases/"
+            def snapshotsRepoUrl = nexusUrl + "/repository/maven-snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username findProperty('nexusUsername') ?: 'admin'
+                password findProperty('nexusPassword') ?: 'admin12'
+            }
+            allowInsecureProtocol true
+        }
     }
 }
